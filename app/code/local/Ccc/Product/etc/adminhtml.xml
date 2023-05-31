@@ -1,0 +1,46 @@
+<config>
+    <menu>
+        <product translate="title" module="product">
+            <title>Product</title>
+            <sort_order>10</sort_order>
+            <children>
+                <manageproduct translate="title" module="product">
+                    <title>Manage product</title>
+                    <action>product/adminhtml_product/index</action>
+                    <sort_order>10</sort_order>
+                </manageproduct>
+                </children>
+        </product>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <product translate="title" module="product">
+                        <title>products</title>
+                        <sort_order>40</sort_order>
+                        <children>
+                             <manageproduct translate="title" module="product">
+                                <title>Manage product</title>
+                                <action>product/adminhtml_product/index</action>
+                                <sort_order>10</sort_order>
+                            </manageproduct>
+                        </children>
+                    </product>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <product translate="title" module="product">
+                                        <title>products Section</title>
+                                        <sort_order>50</sort_order>
+                                    </product>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
