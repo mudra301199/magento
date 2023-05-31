@@ -1,0 +1,8 @@
+<config>
+	<modules>
+		<Ccc_User>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Ccc_User>
+	</modules>
+</config>

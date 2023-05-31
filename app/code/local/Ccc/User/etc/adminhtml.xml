@@ -1,0 +1,33 @@
+<config>
+    <menu>
+         <user translate="title" module="user">
+            <title>User</title>
+            <sort_order>70</sort_order>
+            <children>
+                <page translate="title" module="user">
+                    <title>Manage Users</title>
+                    <action>user/adminhtml_user/index</action>
+                    <sort_order>0</sort_order>
+                </page>
+            </children>
+         </user>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <user translate="title" module="user">
+                        <title>User</title>
+                        <sort_order>70</sort_order>
+                        <children>
+                            <user translate="title">
+                                <title>Manage Users</title>
+                                <sort_order>10</sort_order>
+                            </user>
+                        </children>
+                    </user>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
