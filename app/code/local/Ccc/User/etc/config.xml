@@ -5,24 +5,6 @@
             <version>1.0.0</version>
         </Ccc_User>
     </modules>
-    <frontend>
-        <routers>
-          <user>
-                <use>standard</use>
-                <args>
-                    <module>Ccc_User</module>
-                    <frontName>user</frontName>
-                </args>
-            </user>
-        </routers>
-        <layout>
-            <updates>
-                <User module="Ccc_User">
-                    <file>Ccc_User.xml</file>
-                </User>
-            </updates>
-        </layout>
-    </frontend>
     <global>
         <models>
             <user>
@@ -36,6 +18,9 @@
                     <user>
                         <table>user</table>
                     </user>
+                    <user_address>
+                        <table>user_address</table>
+                    </user_address>
                 </entities>
             </user_resource>
         </models>
