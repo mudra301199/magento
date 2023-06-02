@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <user_index_view translate="label">
+        <reference name="content">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <block type="user/index_grid" name="user.index.grid">
+                
+                <!-- <action method="addTab"><name>123</name></action>        
+                <action method="addTab"><name>456</name></action>        
+                <action method="addTab"><name>789</name></action>
+                <action method="addTab"><name>201</name></action>   -->         
+            </block>
+        </reference>
+    </user_index_view>
+</layout>
