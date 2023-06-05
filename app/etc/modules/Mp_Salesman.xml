@@ -1,8 +1,8 @@
 <config>
 	<modules>
-		<Ccc_Product>
+		<Mp_Salesman>
 			<active>true</active>
 			<codePool>local</codePool>
-		</Ccc_Product>
+		</Mp_Salesman>
 	</modules>
 </config>

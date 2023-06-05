@@ -1,0 +1,46 @@
+<config>
+    <menu>
+        <salesman translate="title" module="salesman">
+            <title>Salesman</title>
+            <sort_order>10</sort_order>
+            <children>
+                <managesalesman translate="title" module="salesman">
+                    <title>Manage salesman</title>
+                    <action>salesman/adminhtml_salesman/index</action>
+                    <sort_order>10</sort_order>
+                </managesalesman>
+            </children>
+        </salesman>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <salesman translate="title" module="salesman">
+                        <title>salesmen</title>
+                        <sort_order>40</sort_order>
+                        <children>
+                             <managesalesman translate="title" module="salesman">
+                                <title>Manage salesman</title>
+                                <action>salesman/adminhtml_salesman/index</action>
+                                <sort_order>10</sort_order>
+                            </managesalesman>
+                        </children>
+                    </salesman>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <salesman translate="title" module="salesman">
+                                        <title>salesmen Section</title>
+                                        <sort_order>50</sort_order>
+                                    </salesman>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
