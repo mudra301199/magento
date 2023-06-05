@@ -1,8 +1,0 @@
-<config>
-	<modules>
-		<Mp_Salesman>
-			<active>true</active>
-			<codePool>local</codePool>
-		</Mp_Salesman>
-	</modules>
-</config>
