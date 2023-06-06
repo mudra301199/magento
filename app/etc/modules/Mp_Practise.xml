@@ -1,0 +1,8 @@
+<config>
+	<modules>
+		<Mp_Practise>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Mp_Practise>
+	</modules>
+</config>
