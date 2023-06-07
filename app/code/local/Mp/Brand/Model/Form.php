@@ -10,3 +10,4 @@ class Mp_Brand_Model_Form extends Mage_Eav_Model_Form
             ->addFieldToFilter('attribute_code', array('neq' => 'created_at'));
     }
 }
+?>
