@@ -14,3 +14,4 @@ $installer->addAttribute(4, 'brand', array(
     'user_defined'  => true,
 ));
 $installer->endSetup();
+?>
