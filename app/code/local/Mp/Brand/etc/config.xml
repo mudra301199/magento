@@ -1,35 +1,29 @@
+<?xml version="1.0"?>
 <config>
     <modules>
-        <Mp_Brand>    
+        <Mp_Brand>
             <version>1.2.1</version>
         </Mp_Brand>
-    </modules>
+    </modules> 
+    <frontend>
+        <routers>
+            <brand>
+                <use>standard</use>
+                <args>
+                    <module>Mp_Brand</module>
+                    <frontName>brand</frontName>
+                </args>
+            </brand>
+        </routers>
+        <layout>
+            <updates>
+                <brand module="Mp_Brand">
+                    <file>brand.xml</file>
+                </brand>
+            </updates>
+        </layout>
+    </frontend>   
     <global>
-        <models>
-            <brand>
-                <class>Mp_Brand_Model</class>
-                <resourceModel>brand_resource</resourceModel>
-            </brand>
-            <brand_resource>
-                <class>Mp_Brand_Model_Resource</class>
-                <deprecatedNode>brand_mysql4</deprecatedNode>
-                <entities>
-                    <brand>
-                        <table>brand</table>
-                    </brand>
-                </entities>
-            </brand_resource>
-        </models>
-        <blocks>
-            <brand>
-                <class>Mp_Brand_Block</class>
-            </brand>
-        </blocks>
-        <helpers>
-           <brand>
-                  <class>Mp_Brand_Helper</class>
-            </brand>
-        </helpers>
         <resources>
             <brand_setup>
                 <setup>
@@ -50,6 +44,52 @@
                 </connection>
             </brand_read>
         </resources>
+        <fieldsets>
+            <catalog_product>
+                <brand>
+                    <brand_attribute>
+                        <is_global>0</is_global>
+                        <frontend_input>select</frontend_input>
+                        <frontend_label>Brand Attribute</frontend_label>
+                        <source_model>mp_brand/source_model</source_model>
+                        <backend_type>int</backend_type>
+                        <is_required>0</is_required>
+                        <apply_to>simple,configurable,virtual,bundle,downloadable</apply_to>
+                    </brand_attribute>
+                </brand>
+            </catalog_product>
+        </fieldsets>
+        <models>
+            <brand>
+                <class>Mp_Brand_Model</class>
+                <resourceModel>brand_resource</resourceModel>
+            </brand>
+            <brand_resource>
+                <class>Mp_Brand_Model_Resource</class>
+                <deprecatedNode>brand_mysql4</deprecatedNode>
+                <entities>
+                    <brand>
+                        <table>brand</table>
+                    </brand>
+                    <brand_address>
+                        <table>brand_address</table>
+                    </brand_address>
+                    <brand_price>
+                        <table>brand_price</table>
+                    </brand_price>
+                </entities>
+            </brand_resource>
+        </models>
+        <blocks>
+            <brand>
+                <class>Mp_Brand_Block</class>
+            </brand>
+        </blocks>
+        <helpers>
+            <brand>
+                <class>Mp_Brand_Helper</class>
+            </brand>
+        </helpers>
     </global>
     <admin>
         <routers>
@@ -61,12 +101,5 @@
                 </args>
             </brand>
         </routers>
-        <layout>
-            <updates>
-                <brand>
-                    <file>brand.xml</file>
-                </brand>
-            </updates>
-        </layout>
     </admin>
 </config>
