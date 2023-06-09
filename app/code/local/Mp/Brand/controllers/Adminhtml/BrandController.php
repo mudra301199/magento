@@ -56,30 +56,26 @@ class Mp_Brand_AdminHtml_BrandController extends Mage_Adminhtml_Controller_Actio
         try {
             $brandModel = Mage::getModel('brand/brand');
             $brandData = $this->getRequest()->getPost('brand');
-            if ($this->getRequest()->getParam('id')) 
-            {
-                $brandModel->setData($brandData)
-                    ->setId($this->getRequest()->getParam('id'));
-            }
-            else
-            {
+            $this->getRequest()->getParam('id');
             $brandModel->setData($brandData)
-                ->setId($this->getRequest()->getParam('id'))
-                ->saveImage('image', Mage::getBaseDir('media') . DS . 'Brand')
-                ->saveImage('banner', Mage::getBaseDir('media') . DS . 'Brand' . DS . 'Banner');
-            }
-
-            if ($brandModel->brand_id == NULL) {
+                    ->setId($this->getRequest()->getParam('id'));
+            if ($brandModel->brand_id == NULL) 
+            {
                 $brandModel->created_at = date("y-m-d H:i:s");
-            } else {
+                $brandModel->save();
+                if ($brandModel->brand_id) 
+                {
+                    $brandModel->saveRewriteUrlKey();
+                }
+            } 
+            else 
+            {
                 $brandModel->updated_at = date("y-m-d H:i:s");
+                $brandModel->save();
             }
-
-            $brandModel->save();
-            if ($brandModel->brand_id) {
-                $brandModel->saveRewriteUrlKey();
-            }
-
+            $brandModel->saveImage('image', Mage::getBaseDir('media') . DS . 'Brand')
+                ->saveImage('banner', Mage::getBaseDir('media') . DS . 'Brand' . DS . 'Banner')->save();
+        
             Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('brand')->__('Brand was successfully saved'));
             Mage::getSingleton('adminhtml/session')->setFormData(true);
 

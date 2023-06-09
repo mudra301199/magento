@@ -1,0 +1,38 @@
+<style type="text/css">
+.container{
+  display: flex;
+}
+
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  width: auto;
+  height: 200px;
+  margin: 5px;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  animation: slideIn 0.5s ease;
+  text-align: center;
+  font-family: arial;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+<div>
+    <div class="container">
+    <?php foreach ($this->getBrands() as $brand): ?>
+        <div class="card">
+            <a>
+              <div class="h-75 align-center">
+                <img src="<?php echo Mage::getBaseUrl('media') . DS. 'Brand' . DS . $brand->image; ?>" class="card-img-top" alt="<?php echo $brand->name; ?>" style="width:100%"/>
+              </div>
+            </a>
+            <h3><?php echo $brand->name; ?></h3>
+        </div>
+    <?php endforeach; ?>
+    </div>
+</div>
