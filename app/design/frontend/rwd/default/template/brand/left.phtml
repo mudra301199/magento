@@ -1,0 +1,90 @@
+<?php $categories = $this->getCategory();?>
+<?php $currentUrl = Mage::helper('core/url')->getCurrentUrl(); ?>
+<div>
+<nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor" aria-controls="navbarColor" aria-expanded="false" aria-label="Toggle navigation"> 
+        <span class="navbar-toggler-icon"></span> 
+    </button>
+       
+</nav>
+<div class="filter">
+    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="false" aria-controls="mobile-filter">Filters<span class="fa fa-filter pl-1"></span></button>
+</div>
+<div id="mobile-filter">
+    <div>
+        <h6 class="p-1 border-bottom">Category</h6>
+        
+    </div>
+</div>
+<section id="sidebar">
+    <div>
+        <ul>
+            <li><a href="<?php echo Mage::helper('core/url')->removeRequestParam($currentUrl, 'category'); ?>">All Products</a></li>
+            <?php foreach ($categories as $category):?>
+                <?php if($category->getId() != 2): ?>
+                <li><a href="<?php echo Mage::getUrl('', array('_current' => true, '_use_rewrite' => true, '_query' => array('category' => $category->getId()))); ?>"><?php echo $category->getName() ?></a></li>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </ul>
+    </div>   
+</section>
+</div>
+
+<style type="text/css"> 
+*{
+    box-sizing: border-box;
+}
+body{
+    color: grey;
+}
+#sidebar{
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    float: left;
+}
+#products{
+    width: 80%;
+    padding: 10px;
+    margin: 0;
+    float: right;
+}
+ul{
+    list-style: none;
+    padding: 5px;
+}
+li a{
+    color: darkgray;
+    text-decoration: none;
+}
+li a:hover{
+    text-decoration: none;
+    color: darksalmon;
+}
+.fa-circle{
+    font-size: 20px;
+}
+.card{
+    width: 250px;
+    display: inline-block;
+    height: 300px;
+}
+.card-img-top{
+    width: 250px;
+    height: 210px;
+}
+.card-body p{
+    margin: 2px;
+}
+.card-body{
+    padding: 0;
+    padding-left: 2px;
+}
+.filter{
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+</style>
+
+</div>
