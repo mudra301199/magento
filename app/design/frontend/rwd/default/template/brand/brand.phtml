@@ -1,37 +1,61 @@
-<style type="text/css">
-.container{
-  display: flex;
-}
+<style>
+    .card {
+        border-radius: 5px;
+        padding: 20px;
+        margin: 10px;
+        width: 300px;
+    }
+    .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    }   
 
-.card {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  width: auto;
-  height: 200px;
-  margin: 5px;
-  transform: scale(1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  animation: slideIn 0.5s ease;
-  text-align: center;
-  font-family: arial;
-}
+    .card:hover img {
+        transform: scale(1.1);
+    }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
 
+    .card h3 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .card h3:hover{
+        text-decoration: none;
+    }
+
+    .card p {
+        margin-top: 10px;
+    }
+
+    .heading{
+        font-size: 25px;
+        margin: 10px;
+        text-align: center;
+    }
+    .sub-heading{
+        font-size: 25px;
+        color: darkgrey;
+    }
+    .card:hover img{
+        transform: scale(1.1);
+    }
 </style>
-<div>
-    <div class="container">
+<div class="heading">
+    <span class="sub-heading">Featured Brands</span>
+</div>
+<div style="display:flex; margin-bottom: 3rem;">
     <?php foreach ($this->getBrands() as $brand): ?>
-        <div class="card">
-            <a>
-              <div class="h-75 align-center">
-                <img src="<?php echo Mage::getBaseUrl('media') . DS. 'Brand' . DS . $brand->image; ?>" class="card-img-top" alt="<?php echo $brand->name; ?>" style="width:100%"/>
-              </div>
-            </a>
-            <h3><?php echo $brand->name; ?></h3>
+        <div class="homepage-banner card">
+              <img src="<?php echo Mage::getBaseUrl('media') . 'Brand' . DS . $brand->image; ?>" alt="<?php echo $brand->name; ?>" style="width:100%"/>
+            </a></p>
+            <center><h1><a href="<?php echo $this->getBaseUrl() . $brand->url_key; ?>"><?php echo $brand->name; ?></h1></a></center>
         </div>
     <?php endforeach; ?>
     </div>

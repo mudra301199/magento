@@ -1,10 +1,18 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
 <cms_index_index>
-    <remove name="right"/>
-    <remove name="footer"/>
+    <remove name="right"></remove>
     <reference name="content">
         <block type="brand/brand" name="brand.brand" template="brand/brand.phtml"/>
     </reference>
 </cms_index_index>
+<brand_index_view>
+    <remove name="right"></remove>
+    <reference name="content">
+        <block type="brand/brand" name="brand.banner" template="brand/banner.phtml"/>
+    </reference>
+    <reference name="left">
+        <block type="brand/brand" name="brand_left" template="brand/left.phtml" />
+    </reference>
+</brand_index_view>
 </layout>
