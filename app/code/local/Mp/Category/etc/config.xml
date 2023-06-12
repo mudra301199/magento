@@ -1,35 +1,28 @@
 <config>
     <modules>
         <Mp_Category>    
-            <version>1.0.1</version>
+            <version>1.2.0</version>
         </Mp_Category>
     </modules>
+    <frontend>
+        <routers>
+            <category>
+                <use>standard</use>
+                <args>
+                    <module>Mp_Category</module>
+                    <frontName>category</frontName>
+                </args>
+            </category>
+        </routers>
+        <layout>
+            <updates>
+                <category module="Mp_Category">
+                    <file>category.xml</file>
+                </category>
+            </updates>
+        </layout>
+    </frontend>    
     <global>
-        <models>
-            <category>
-                <class>Mp_Category_Model</class>
-                <resourceModel>category_resource</resourceModel>
-            </category>
-            <category_resource>
-                <class>Mp_Category_Model_Resource</class>
-                <deprecatedNode>category_mysql4</deprecatedNode>
-                <entities>
-                    <category>
-                        <table>category</table>
-                    </category>
-                </entities>
-            </category_resource>
-        </models>
-        <blocks>
-            <category>
-                <class>Mp_Category_Block</class>
-            </category>
-        </blocks>
-        <helpers>
-           <category>
-                  <class>Mp_Category_Helper</class>
-            </category>
-        </helpers>
         <resources>
             <category_setup>
                 <setup>
@@ -50,6 +43,36 @@
                 </connection>
             </category_read>
         </resources>
+        <models>
+            <category>
+                <class>Mp_Category_Model</class>
+                <resourceModel>category_resource</resourceModel>
+            </category>
+            <category_resource>
+                <class>Mp_Category_Model_Resource</class>
+                <deprecatedNode>category_mysql4</deprecatedNode>
+                <entities>
+                    <category>
+                        <table>category</table>
+                    </category>
+                </entities>
+            </category_resource>
+        </models>
+        <blocks>
+            <category>
+                <class>Mp_Category_Block</class>
+            </category>
+            <adminhtml>
+                <rewrite>
+                    <catalog_category_tree>Mp_Category_Block_Adminhtml_Catalog_Category_Tree</catalog_category_tree>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <category>
+                <class>Mp_Category_Helper</class>
+            </category>
+        </helpers>
     </global>
     <admin>
         <routers>
@@ -61,12 +84,5 @@
                 </args>
             </category>
         </routers>
-        <layout>
-            <updates>
-                <category>
-                    <file>category.xml</file>
-                </category>
-            </updates>
-        </layout>
     </admin>
 </config>

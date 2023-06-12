@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <cms_index_index>
+        <remove name="right"></remove>
+        <reference name="content">
+            <block type="category/category" name="category.category" template="category/category.phtml" after="brand.brand"/>
+        </reference>
+    </cms_index_index>
+</layout>
