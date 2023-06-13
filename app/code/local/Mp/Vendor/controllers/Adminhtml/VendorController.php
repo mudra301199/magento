@@ -69,11 +69,22 @@ class Mp_Vendor_AdminHtml_VendorController extends Mage_Adminhtml_Controller_Act
         $this->renderLayout();
     }
 
+    public function statesAction()
+    {
+        $countryId = $this->getRequest()->getPost('country_id');
+        $states = Mage::getModel('directory/region')->getResourceCollection()
+            ->addCountryFilter($countryId)
+            ->load()
+            ->toOptionArray();
+        $this->getResponse()->setHeader('Content-type', 'application/json');
+        $this->getResponse()->setBody(json_encode($states));      
+    }
 
     public function saveAction()
     {
-        if ($data = $this->getRequest()->getPost()) {
-
+        if ($data = $this->getRequest()->getPost()) 
+        {
+            $data['vendor']['password'] = md5($data['vendor']['password']);
             $model = Mage::getModel('vendor/vendor');
             $id = $this->getRequest()->getParam('vendor_id');
             $model->setData($data['vendor'])->setId($id);
@@ -181,5 +192,32 @@ class Mp_Vendor_AdminHtml_VendorController extends Mage_Adminhtml_Controller_Act
         }
         $this->_redirect('*/*/index');
     }
+    public function massStatusAction()
+    {
+        $vendorIds = $this->getRequest()->getParam('vendor_id');
+        $status = $this->getRequest()->getParam('status');
 
+        if (!is_array($vendorIds)) {
+            $this->getSession()->addError($this->_('Please select vendor(s).'));
+        } else {
+            try {
+                $vendorCollection = Mage::getModel('vendor/vendor')->getCollection()
+                    ->addFieldToFilter('vendor_id', array('in' => $vendorIds));
+
+                foreach ($vendorCollection as $vendor) {
+                    $vendor->setStatus($status);
+                    $vendor->save();
+                }
+
+                $this->_getSession()->addSuccess(
+                    $this->__('Total of %d vendor(s) status were successfully updated.', count($vendorIds))
+                );
+            } catch (Exception $e) {
+                $this->_getSession()->addError($e->getMessage());
+            }
+        }
+
+        $this->_redirect('*/*/index');
+    }
 }
+?>
