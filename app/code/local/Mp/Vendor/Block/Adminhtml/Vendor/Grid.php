@@ -25,16 +25,10 @@ class Mp_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widget_
             'index'     => 'vendor_id',
         ));
 
-        $this->addColumn('first_name', array(
-            'header'    => Mage::helper('vendor')->__('First Name'),
+        $this->addColumn('name', array(
+            'header'    => Mage::helper('vendor')->__('Name'),
             'align'     => 'left',
-            'index'     => 'first_name'
-        ));
-
-        $this->addColumn('last_name', array(
-            'header'    => Mage::helper('vendor')->__('Last Name'),
-            'align'     => 'left',
-            'index'     => 'last_name',
+            'index'     => 'name'
         ));
 
         $this->addColumn('email', array(
@@ -43,10 +37,10 @@ class Mp_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widget_
             'index'     => 'email'
         ));
 
-        $this->addColumn('gender', array(
-            'header'    => Mage::helper('vendor')->__('Gender'),
+        $this->addColumn('password', array(
+            'header'    => Mage::helper('vendor')->__('Password'),
             'align'     => 'left',
-            'index'     => 'gender',
+            'index'     => 'password',
         ));
 
         $this->addColumn('mobile', array(
@@ -61,10 +55,16 @@ class Mp_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widget_
             'index'     => 'status',
         ));
 
-        $this->addColumn('company', array(
-            'header'    => Mage::helper('vendor')->__('Company'),
+        $this->addColumn('created_at', array(
+            'header'    => Mage::helper('vendor')->__('Created At'),
             'align'     => 'left',
-            'index'     => 'company'
+            'index'     => 'created_at'
+        ));
+
+        $this->addColumn('updated_at', array(
+            'header'    => Mage::helper('vendor')->__('Updated At'),
+            'align'     => 'left',
+            'index'     => 'updated_at'
         ));
 
         return parent::_prepareColumns();
@@ -80,6 +80,29 @@ class Mp_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widget_
         'url'  => $this->getUrl('*/*/massDelete', array('' => '')),
         'confirm' => Mage::helper('vendor')->__('Are you sure?')
         ));
+
+        $this->getMassactionBlock()->addItem('status', array(
+        'label' => Mage::helper('vendor')->__('Change Status'),
+        'url' => $this->getUrl('*/*/massStatus'),
+        'additional' => array(
+            'status' => array(
+                'name' => 'status',
+                'type' => 'select',
+                'class' => 'required-entry',
+                'label' => Mage::helper('vendor')->__('Status'),
+                'values' => array(
+                    array(
+                        'value' => 1,
+                        'label' => Mage::helper('vendor')->__('Active'),
+                    ),
+                    array(
+                        'value' => 2,
+                        'label' => Mage::helper('vendor')->__('InActive'),
+                    ),
+                ),
+            ),
+        ),
+    ));
          
         return $this;
     }
