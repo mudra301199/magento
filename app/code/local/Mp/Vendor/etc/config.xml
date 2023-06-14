@@ -4,6 +4,24 @@
             <version>1.0.1</version>
         </Mp_Vendor>
     </modules>
+    <frontend>
+        <routers>
+            <vendor>
+                <use>standard</use>
+                <args>
+                    <module>Mp_Vendor</module>
+                    <frontName>vendor</frontName>
+                </args>
+            </vendor>
+        </routers>
+        <layout>
+            <updates>
+                <vendor module="Mp_Vendor">
+                    <file>vendor.xml</file>
+                </vendor>
+            </updates>
+        </layout>
+    </frontend>
     <global>
         <models>
             <vendor>
