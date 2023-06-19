@@ -1,0 +1,78 @@
+<config>
+    <menu>
+        <practice translate="title" module="practice">
+            <title>Practice</title>
+            <sort_order>10</sort_order>
+            <children>
+                <taskone translate="title" module="practice">
+                    <title>Task One</title>
+                    <action>practice/adminhtml_query/first</action>
+                    <sort_order>10</sort_order>
+                </taskone>
+            </children>
+            <children>
+                <tasktwo translate="title" module="practice">
+                    <title>Task Two</title>
+                    <action>practice/adminhtml_query/second</action>
+                    <sort_order>10</sort_order>
+                </tasktwo>
+            </children>
+            <children>
+                <taskthree translate="title" module="practice">
+                    <title>Task Three</title>
+                    <action>practice/adminhtml_query/third</action>
+                    <sort_order>10</sort_order>
+                </taskthree>
+            </children>
+            <children>
+                <taskfour translate="title" module="practice">
+                    <title>Task Four</title>
+                    <action>practice/adminhtml_query/fourth</action>
+                    <sort_order>10</sort_order>
+                </taskfour>
+            </children>
+            <children>
+                <taskfive translate="title" module="practice">
+                    <title>Task Five</title>
+                    <action>practice/adminhtml_query/fifth</action>
+                    <sort_order>10</sort_order>
+                </taskfive>
+            </children>
+            <children>
+                <tasksix translate="title" module="practice">
+                    <title>Task Six</title>
+                    <action>practice/adminhtml_query/sixth</action>
+                    <sort_order>10</sort_order>
+                </tasksix>
+            </children>
+            <children>
+                <taskseven translate="title" module="practice">
+                    <title>Task Seven</title>
+                    <action>practice/adminhtml_query/seventh</action>
+                    <sort_order>10</sort_order>
+                </taskseven>
+            </children>
+            <children>
+                <taskeight translate="title" module="practice">
+                    <title>Task Eight</title>
+                    <action>practice/adminhtml_query/eighth</action>
+                    <sort_order>10</sort_order>
+                </taskeight>
+            </children>
+            <children>
+                <tasknine translate="title" module="practice">
+                    <title>Task Nine</title>
+                    <action>practice/adminhtml_query/ninth</action>
+                    <sort_order>10</sort_order>
+                </tasknine>
+            </children>
+            <children>
+                <taskten translate="title" module="practice">
+                    <title>Task Ten</title>
+                    <action>practice/adminhtml_query/tenth</action>
+                    <sort_order>10</sort_order>
+                </taskten>
+            </children>
+        </practice>
+    </menu>
+</config>
