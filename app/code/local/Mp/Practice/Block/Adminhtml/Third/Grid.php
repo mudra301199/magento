@@ -22,7 +22,7 @@ class Mp_Practice_Block_Adminhtml_Third_Grid extends Mage_Adminhtml_Block_Widget
             $attributeCode = $attribute->getAttributeCode();
 
             $attributeModel = Mage::getModel('catalog/resource_eav_attribute')->load($attributeId);
-            $optionCount = $attributeModel->getSource()->getAllOptions(false);
+            $optionCount = $attributeModel->getSource()->getAllOptions(true);
 
             if (count($optionCount) > 10) {
                 $attributeList[] = array(
@@ -30,6 +30,7 @@ class Mp_Practice_Block_Adminhtml_Third_Grid extends Mage_Adminhtml_Block_Widget
                     'attribute_code' => $attributeCode,
                     'option_count' => count($optionCount)
                 );
+            // echo "<pre>"; print_r($attributeList); die();
             }
         }
         $collection = new Varien_Data_Collection();

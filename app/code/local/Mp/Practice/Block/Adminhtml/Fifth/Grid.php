@@ -13,12 +13,14 @@ class Mp_Practice_Block_Adminhtml_Fifth_Grid extends Mage_Adminhtml_Block_Widget
     {
         $collection = Mage::getModel('catalog/product')->getCollection()
             ->addAttributeToSelect('*');
+            
 
         $collection->getSelect()->joinLeft(
             array('mg' => $collection->getTable('catalog/product_attribute_media_gallery')),
             'mg.entity_id = e.entity_id',
             array('media_count' => 'COUNT(mg.value_id)')
         );
+        // echo "<pre>"; print_r($collection); die();
 
         $collection->getSelect()->group('e.entity_id');
         $this->setCollection($collection);
@@ -28,6 +30,12 @@ class Mp_Practice_Block_Adminhtml_Fifth_Grid extends Mage_Adminhtml_Block_Widget
     protected function _prepareColumns()
     {
         $baseUrl = $this->getUrl();
+
+        $this->addColumn('entity_id', array(
+            'header'    => Mage::helper('product')->__('Entity Id'),
+            'align'     => 'center',
+            'index'     => 'entity_id'
+        ));
 
         $this->addColumn('sku', array(
             'header'    => Mage::helper('product')->__('SKU'),

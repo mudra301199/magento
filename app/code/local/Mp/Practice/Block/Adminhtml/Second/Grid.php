@@ -35,6 +35,7 @@ class Mp_Practice_Block_Adminhtml_Second_Grid extends Mage_Adminhtml_Block_Widge
                     'option_id' => $optionId,
                     'option_name' => $optionName
                 );
+        // echo "<pre>"; print_r($attributeOptionData); die();
             }
         }
 

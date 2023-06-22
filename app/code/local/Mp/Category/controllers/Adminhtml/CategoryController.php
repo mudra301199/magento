@@ -86,8 +86,6 @@ class Mp_category_AdminHtml_categoryController extends Mage_Adminhtml_Controller
 
             $model->setData($data);
 
-            Mage::dispatchEvent('category_prepare_save', array('page' => $model, 'request' => $this->getRequest()));
-
             // try to save it
             try {
                 // save the data

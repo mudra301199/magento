@@ -13,6 +13,9 @@ class Mp_Practice_Block_Adminhtml_Seventh_Grid extends Mage_Adminhtml_Block_Widg
     {
         $collection = Mage::getModel('customer/customer')->getCollection()
                     ->addAttributeToSelect('firstname');
+
+        // echo "<pre>"; print_r($collection); die();
+        
         $collection->getSelect()
             ->joinLeft(
                 array('o' => Mage::getSingleton('core/resource')->getTableName('sales_flat_order')),

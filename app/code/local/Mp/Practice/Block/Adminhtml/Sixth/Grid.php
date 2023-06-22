@@ -14,6 +14,8 @@ class Mp_Practice_Block_Adminhtml_Sixth_Grid extends Mage_Adminhtml_Block_Widget
         $collection = Mage::getResourceModel('customer/customer_collection')
             ->addAttributeToSelect('*');
 
+        // echo "<pre>"; print_r($collection); die();
+
         $collection->getSelect()
             ->joinLeft(
                 array('orders' => $collection->getTable('sales/order')),
