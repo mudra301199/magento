@@ -15,6 +15,14 @@
                 </args>
             </practice>
         </routers>
+        <practice>
+            <collection>
+                <attributes>
+                    <name/>
+                    <is_active/>
+                </attributes>
+            </collection>
+        </practice>
     </frontend>   
     <global>
         <blocks>
