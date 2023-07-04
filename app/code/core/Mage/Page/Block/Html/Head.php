@@ -151,6 +151,7 @@ class Mage_Page_Block_Html_Head extends Mage_Core_Block_Template
     {
         unset($this->_data['items'][$type.'/'.$name]);
         return $this;
+
     }
 
     /**

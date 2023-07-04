@@ -73,6 +73,13 @@
                     <sort_order>10</sort_order>
                 </taskten>
             </children>
+            <children>
+                <taskmethod translate="title" module="practice">
+                    <title>Collection Method</title>
+                    <action>practice/adminhtml_query/method</action>
+                    <sort_order>10</sort_order>
+                </taskmethod>
+            </children>
         </practice>
     </menu>
 </config>

@@ -379,5 +379,13 @@ class Mp_Practice_Adminhtml_QueryController extends Mage_Adminhtml_Controller_Ac
         echo "<pre>";
         echo $select;
     }
+
+    public function methodAction()
+    {
+        $this->loadLayout();
+        $block = $this->getLayout()->createBlock('Mp_Practice_Block_Adminhtml_Method');
+        $this->_addContent($block);
+        $this->renderLayout();
+    }
 }
 ?>  
