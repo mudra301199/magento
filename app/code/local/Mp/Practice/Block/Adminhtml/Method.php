@@ -11,7 +11,7 @@ class Mp_Practice_Block_Adminhtml_Method extends Mage_Adminhtml_Block_Widget_Gri
 
     public function _prepareLayout()
     {
-        $collection = Mage::getModel('catalog/product')->getCollection();
+        // $collection = Mage::getModel('catalog/product')->getCollection();
 
         // $output = $collection->getSelectCountSql();
         // getSelectCountSql():Retrieves the SQL query to count the items in the collection.
@@ -73,7 +73,7 @@ class Mp_Practice_Block_Adminhtml_Method extends Mage_Adminhtml_Block_Widget_Gri
         // $output = $collection->getData(); 
         // getData():To get data in form of array.
 
-        echo "<pre>"; print_r($output); die();
+        // echo "<pre>"; print_r($output); die();
     }
 
 }
