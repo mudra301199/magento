@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+   <menu>
+        <qualitycheck translate="title" module="qualitycheck">
+            <title>Qualitychecks</title>
+            <sort_order>40</sort_order>
+            <children>
+                <question translate="title" module="qualitycheck">
+                    <title>Questions</title>
+                    <action>adminhtml/question/index</action>
+                    <sort_order>0</sort_order>
+                </question>
+                <answer translate="title" module="qualitycheck">
+                    <title>Answers</title>
+                    <action>adminhtml/answer/index</action>
+                    <sort_order>10</sort_order>
+                </answer>
+            </children>
+         </qualitycheck>
+    </menu>
+</config>
